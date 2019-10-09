@@ -1,3 +1,3 @@
 module.exports = {
-    url: 'mongodb://localhost:27017/schedules'
+    url: 'mongodb+srv://dark_shadow9532:<minh9532>@cluster0-auyfy.mongodb.net/test?retryWrites=true&w=majority'
 }
