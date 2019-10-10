@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const PORT = process.env.PORT || 5000
 
 // create express app
 const app = express();
@@ -55,7 +56,7 @@ require('./app/routes/work.routes.js')(app);
 require('./app/routes/mqtt.routes.js')(app);
 
 // listen for requests
-app.listen(3000, () => {
+app.listen(PORT, () => {
     console.log("Server is listening on port 3000");
 });
 
