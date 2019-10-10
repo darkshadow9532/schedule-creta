@@ -15,17 +15,31 @@ app.use(bodyParser.json())
 
 // Configuring the database
 const dbConfig = require('./config/database.config.js');
+// const mongoose = require('mongoose');
+
+// mongoose.Promise = global.Promise;
+
+// // Connecting to the database
+// console.log(dbConfig.url);
+// mongoose.connect(dbConfig.url, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+// }).then(() => {
+//     console.log("Successfully connected to the database");    
+// }).catch(err => {
+//     console.log('Could not connect to the database. Exiting now...', err);
+//     process.exit();
+// });
+
 const mongoose = require('mongoose');
-
 mongoose.Promise = global.Promise;
-
-// Connecting to the database
-console.log(dbConfig.url);
-mongoose.connect(dbConfig.url, {
+const uri = "mongodb+srv://fin:asrkpvg7@cluster0-ogucd.mongodb.net/test?retryWrites=true&w=majority";
+mongoose.connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {
-    console.log("Successfully connected to the database");    
+    console.log("Successfully connected to the database");
+    // mongoose.close();
 }).catch(err => {
     console.log('Could not connect to the database. Exiting now...', err);
     process.exit();
